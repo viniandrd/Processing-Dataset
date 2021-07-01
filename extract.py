@@ -1,13 +1,6 @@
 import scipy, numpy, shutil, os, nibabel, imageio, glob
 from pathlib import Path
-from utils import printProgressBar
-
-def count(input, type):
-    count = 0
-    for path in Path(input).rglob('*.' + type):
-        count += 1
-
-    return count
+from utils import printProgressBar, count
 
 def extract(input, output, initial_slice=0, final_slice=155):
     patients_HGG = []
