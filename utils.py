@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
@@ -21,3 +22,11 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     # Print New Line on Complete
     if iteration == total:
         print()
+
+
+def count(input, type):
+    count = 0
+    for path in Path(input).rglob('*.' + type):
+        count += 1
+
+    return count
